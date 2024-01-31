@@ -28,8 +28,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("OurPolicyNew",
-        builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());        
+        //builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+        builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://fictitiousschool20240131124902.azurewebsites.net/swagger/index.html"));
 });
+
 
 var app = builder.Build();
 
